@@ -1,0 +1,284 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#f7f3eb">
+  <meta name="description" content="A small corner of the internet by Koubai — notes, projects, and things made with care.">
+  <title>Koubai — A little corner of the internet</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Mono:wght@400;500&family=DM+Sans:wght@400;500;600;700&family=Playfair+Display:ital,wght@0,500;0,600;1,500;1,600&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      color-scheme: light;
+      --paper: #f7f3eb;
+      --ink: #25221f;
+      --muted: #77716a;
+      --red: #a83242;
+      --line: #ded8ce;
+      --soft-red: #f0e2df;
+      --serif: "Playfair Display", Georgia, serif;
+      --sans: "DM Sans", sans-serif;
+      --mono: "DM Mono", monospace;
+    }
+    * { box-sizing: border-box; }
+    html { scroll-behavior: smooth; }
+    body {
+      margin: 0;
+      background: var(--paper);
+      color: var(--ink);
+      font-family: var(--sans);
+      -webkit-font-smoothing: antialiased;
+    }
+    a { color: inherit; text-decoration: none; }
+    a:focus-visible { outline: 2px solid var(--red); outline-offset: 5px; }
+    .shell { width: min(1120px, calc(100% - 64px)); margin: 0 auto; }
+    header {
+      height: 88px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      border-bottom: 1px solid var(--line);
+    }
+    .wordmark { font: 600 19px var(--serif); letter-spacing: -.04em; }
+    .wordmark span { color: var(--red); }
+    nav { display: flex; align-items: center; gap: 34px; }
+    nav a, .eyebrow, .index, .footer-note {
+      font: 11px var(--mono);
+      letter-spacing: .09em;
+      text-transform: uppercase;
+    }
+    nav a { color: #5e5952; transition: color .2s ease; }
+    nav a:hover { color: var(--red); }
+    .hero {
+      min-height: 620px;
+      display: grid;
+      grid-template-columns: 1.1fr .9fr;
+      align-items: center;
+      gap: 24px;
+      padding: 66px 0 80px;
+    }
+    .eyebrow { color: var(--red); }
+    h1 {
+      max-width: 650px;
+      margin: 24px 0 20px;
+      font: 500 clamp(64px, 9vw, 116px)/.96 var(--serif);
+      letter-spacing: -.065em;
+    }
+    h1 em { color: var(--red); font-weight: 500; }
+    .intro { max-width: 435px; color: #625d56; font-size: 16px; line-height: 1.8; }
+    .hero-link {
+      display: inline-flex;
+      align-items: center;
+      gap: 12px;
+      margin-top: 26px;
+      color: var(--red);
+      font: 11px var(--mono);
+      letter-spacing: .07em;
+      text-transform: uppercase;
+    }
+    .hero-link span { transition: transform .2s ease; }
+    .hero-link:hover span { transform: translateX(4px); }
+    .flower-wrap { display: grid; place-items: center; min-height: 390px; }
+    .flower { width: min(100%, 420px); overflow: visible; }
+    .flower .petal { fill: #a83242; }
+    .flower .petal-light { fill: #c45d66; }
+    .flower .center { fill: #e9bd7a; }
+    .flower .stem { fill: none; stroke: #596249; stroke-width: 2; stroke-linecap: round; }
+    .flower .twig { fill: none; stroke: #596249; stroke-width: 1.4; stroke-linecap: round; }
+    .flower .bud { fill: #8e2937; }
+    .flower-caption { margin-top: 8px; color: var(--muted); font: 10px var(--mono); letter-spacing: .09em; text-transform: uppercase; }
+    section { border-top: 1px solid var(--line); }
+    .about { display: grid; grid-template-columns: 1fr 2fr; gap: 60px; padding: 72px 0 82px; }
+    .index { color: var(--red); }
+    h2 { margin: 0; font: 500 42px/1.1 var(--serif); letter-spacing: -.04em; }
+    .about-copy { max-width: 610px; }
+    .about-copy p { margin: 0 0 18px; color: #625d56; font-size: 15px; line-height: 1.85; }
+    .about-copy p:last-child { margin-bottom: 0; }
+    .work { padding: 66px 0 84px; }
+    .section-head { display: flex; align-items: end; justify-content: space-between; margin-bottom: 30px; }
+    .section-head h2 { margin-top: 12px; }
+    .section-note { color: var(--muted); font: 11px var(--mono); }
+    .cards { display: grid; grid-template-columns: repeat(3, 1fr); gap: 16px; }
+    .card {
+      min-height: 220px;
+      padding: 24px;
+      border: 1px solid var(--line);
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      transition: border-color .2s ease, transform .2s ease;
+    }
+    .card:hover { border-color: var(--red); transform: translateY(-3px); }
+    .card-top { display: flex; align-items: center; justify-content: space-between; }
+    .card-mark { color: var(--red); font: 24px var(--serif); }
+    .card-arrow { color: var(--muted); font-size: 17px; }
+    .card h3 { margin: 26px 0 8px; font: 500 24px var(--serif); }
+    .card p { margin: 0; color: var(--muted); font-size: 13px; line-height: 1.6; }
+    .contact {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      align-items: center;
+      gap: 28px;
+      margin: 30px 0 70px;
+      padding: 42px 46px;
+      background: var(--soft-red);
+    }
+    .contact h2 { margin-top: 12px; font-size: 36px; }
+    .contact-right { justify-self: end; text-align: right; }
+    .contact-right p { margin: 0 0 14px; color: #625d56; font-size: 14px; }
+    .contact-link { color: var(--red); font: 12px var(--mono); letter-spacing: .04em; }
+    .contact-link span { padding-left: 8px; }
+    footer {
+      min-height: 76px;
+      border-top: 1px solid var(--line);
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      color: var(--muted);
+    }
+    .footer-note { font-size: 10px; }
+    .back-top { color: var(--red); font: 11px var(--mono); }
+    @media (max-width: 720px) {
+      .shell { width: min(100% - 40px, 560px); }
+      header { height: 72px; }
+      nav { gap: 18px; }
+      nav a { font-size: 9px; }
+      .hero { min-height: auto; grid-template-columns: 1fr; padding: 78px 0 50px; }
+      h1 { font-size: clamp(66px, 17vw, 100px); }
+      .intro { font-size: 15px; }
+      .flower-wrap { min-height: 290px; margin-top: 20px; }
+      .flower { width: min(88%, 340px); }
+      .about { grid-template-columns: 1fr; gap: 24px; padding: 54px 0 62px; }
+      h2 { font-size: 36px; }
+      .work { padding: 54px 0 62px; }
+      .section-head { align-items: start; gap: 12px; flex-direction: column; }
+      .cards { grid-template-columns: 1fr; }
+      .card { min-height: 175px; }
+      .contact { grid-template-columns: 1fr; padding: 32px 26px; margin: 18px 0 52px; }
+      .contact-right { justify-self: start; text-align: left; }
+      footer { min-height: 68px; }
+    }
+    @media (prefers-reduced-motion: reduce) {
+      *, *::before, *::after { scroll-behavior: auto !important; transition-duration: .01ms !important; }
+    }
+  </style>
+</head>
+<body>
+  <div class="shell">
+    <header>
+      <a class="wordmark" href="#top" aria-label="Koubai home">koubai<span>.</span></a>
+      <nav aria-label="Main navigation">
+        <a href="#about">About</a>
+        <a href="#work">Things I make</a>
+        <a href="#contact">Say hello</a>
+      </nav>
+    </header>
+
+    <main id="top">
+      <section class="hero" aria-labelledby="hero-title" style="border-top: 0">
+        <div>
+          <div class="eyebrow">A little corner of the internet</div>
+          <h1 id="hero-title">Hello,<br>I'm <em>Koubai.</em></h1>
+          <p class="intro">Welcome to my little corner of the internet. I make things, follow my curiosity, and collect the small details that make a day feel special.</p>
+          <a class="hero-link" href="#about">A little about me <span aria-hidden="true">→</span></a>
+        </div>
+        <div class="flower-wrap">
+          <div>
+            <svg class="flower" viewBox="0 0 420 420" role="img" aria-labelledby="flower-title">
+              <title id="flower-title">An illustrated red plum blossom branch</title>
+              <path class="stem" d="M54 369 C137 320 190 265 233 202 C270 146 312 101 371 68"/>
+              <path class="twig" d="M183 274 C153 238 123 211 82 193 M238 196 C206 165 193 135 193 97 M279 137 C310 147 334 164 350 190 M329 99 C326 76 331 58 343 42"/>
+              <path d="M122 226 C108 205 96 200 83 203 C93 220 106 228 122 226Z" fill="#74805f"/>
+              <path d="M169 248 C148 230 133 230 120 238 C136 251 151 255 169 248Z" fill="#8b926c"/>
+              <path d="M225 212 C202 199 190 185 187 169 C207 173 220 188 225 212Z" fill="#78815f"/>
+              <path d="M267 158 C285 141 302 137 316 143 C301 159 285 165 267 158Z" fill="#8b926c"/>
+              <path d="M311 121 C331 121 345 131 350 145 C331 147 318 138 311 121Z" fill="#74805f"/>
+              <g transform="translate(82 193) scale(.72)">
+                <ellipse class="petal" cx="0" cy="-27" rx="14" ry="25"/><ellipse class="petal-light" cx="26" cy="-9" rx="14" ry="25" transform="rotate(72 26 -9)"/><ellipse class="petal" cx="16" cy="22" rx="14" ry="25" transform="rotate(144 16 22)"/><ellipse class="petal-light" cx="-16" cy="22" rx="14" ry="25" transform="rotate(216 -16 22)"/><ellipse class="petal" cx="-26" cy="-9" rx="14" ry="25" transform="rotate(288 -26 -9)"/><circle class="center" r="8"/>
+              </g>
+              <g transform="translate(193 97) scale(.86)">
+                <ellipse class="petal-light" cx="0" cy="-27" rx="14" ry="25"/><ellipse class="petal" cx="26" cy="-9" rx="14" ry="25" transform="rotate(72 26 -9)"/><ellipse class="petal-light" cx="16" cy="22" rx="14" ry="25" transform="rotate(144 16 22)"/><ellipse class="petal" cx="-16" cy="22" rx="14" ry="25" transform="rotate(216 -16 22)"/><ellipse class="petal-light" cx="-26" cy="-9" rx="14" ry="25" transform="rotate(288 -26 -9)"/><circle class="center" r="8"/>
+              </g>
+              <g transform="translate(350 190) scale(.7)">
+                <ellipse class="petal" cx="0" cy="-27" rx="14" ry="25"/><ellipse class="petal-light" cx="26" cy="-9" rx="14" ry="25" transform="rotate(72 26 -9)"/><ellipse class="petal" cx="16" cy="22" rx="14" ry="25" transform="rotate(144 16 22)"/><ellipse class="petal-light" cx="-16" cy="22" rx="14" ry="25" transform="rotate(216 -16 22)"/><ellipse class="petal" cx="-26" cy="-9" rx="14" ry="25" transform="rotate(288 -26 -9)"/><circle class="center" r="8"/>
+              </g>
+              <g transform="translate(343 42) scale(.55)">
+                <ellipse class="petal-light" cx="0" cy="-27" rx="14" ry="25"/><ellipse class="petal" cx="26" cy="-9" rx="14" ry="25" transform="rotate(72 26 -9)"/><ellipse class="petal-light" cx="16" cy="22" rx="14" ry="25" transform="rotate(144 16 22)"/><ellipse class="petal" cx="-16" cy="22" rx="14" ry="25" transform="rotate(216 -16 22)"/><ellipse class="petal-light" cx="-26" cy="-9" rx="14" ry="25" transform="rotate(288 -26 -9)"/><circle class="center" r="8"/>
+              </g>
+              <circle class="bud" cx="53" cy="369" r="5"/><circle class="bud" cx="371" cy="68" r="5"/><circle class="bud" cx="238" cy="196" r="4"/>
+            </svg>
+            <div class="flower-caption">紅梅 — koubai / red plum blossom</div>
+          </div>
+        </div>
+      </section>
+
+      <section id="about" class="about">
+        <div>
+          <div class="index">01 / A little about me</div>
+          <h2 style="margin-top: 14px">Curious by nature.</h2>
+        </div>
+        <div class="about-copy">
+          <p>I'm Koubai — a maker, a learner, and someone who thinks the best ideas often begin with a simple “what if?”</p>
+          <p>This site is a home for the things I care about: experiments, notes from along the way, and projects made with patience and a little playfulness. I'm glad you found your way here.</p>
+        </div>
+      </section>
+
+      <section id="work" class="work">
+        <div class="section-head">
+          <div>
+            <div class="index">02 / Out in the world</div>
+            <h2>Things I make.</h2>
+          </div>
+          <div class="section-note">A few places to wander</div>
+        </div>
+        <div class="cards">
+          <a class="card" href="https://github.com/redplum701" target="_blank" rel="noreferrer">
+            <div class="card-top"><span class="card-mark">⌘</span><span class="card-arrow" aria-hidden="true">↗</span></div>
+            <div><h3>Open source</h3><p>Small experiments and useful things, shared in the open.</p></div>
+          </a>
+          <a class="card" href="#notes">
+            <div class="card-top"><span class="card-mark">✳</span><span class="card-arrow" aria-hidden="true">↓</span></div>
+            <div><h3>Field notes</h3><p>Thoughts, discoveries, and things worth remembering.</p></div>
+          </a>
+          <a class="card" href="#contact">
+            <div class="card-top"><span class="card-mark">○</span><span class="card-arrow" aria-hidden="true">→</span></div>
+            <div><h3>In progress</h3><p>There is always something new taking shape.</p></div>
+          </a>
+        </div>
+      </section>
+
+      <section id="notes" class="about">
+        <div>
+          <div class="index">03 / From the notebook</div>
+          <h2 style="margin-top: 14px">A work in progress.</h2>
+        </div>
+        <div class="about-copy">
+          <p>Good things take time. I'm currently gathering ideas and making room for what comes next. Check back soon — this little corner will grow as I do.</p>
+        </div>
+      </section>
+
+      <section class="contact" id="contact">
+        <div>
+          <div class="index">04 / Get in touch</div>
+          <h2>Have a good idea?</h2>
+        </div>
+        <div class="contact-right">
+          <p>I'd love to hear what you're working on.</p>
+          <a class="contact-link" href="https://github.com/redplum701">Find me on GitHub <span aria-hidden="true">↗</span></a>
+        </div>
+      </section>
+    </main>
+
+    <footer>
+      <a class="wordmark" href="#top">koubai<span>.</span></a>
+      <div class="footer-note">Made with care · <span id="year"></span></div>
+      <a class="back-top" href="#top">Back to top ↑</a>
+    </footer>
+  </div>
+  <script>
+    document.getElementById("year").textContent = new Date().getFullYear();
+  </script>
+</body>
+</html>
