@@ -116,6 +116,9 @@
     .card-arrow { color: var(--muted); font-size: 17px; }
     .card h3 { margin: 26px 0 8px; font: 500 24px var(--serif); }
     .card p { margin: 0; color: var(--muted); font-size: 13px; line-height: 1.6; }
+    .card-meta { margin-top: 15px; color: var(--red); font: 10px var(--mono); letter-spacing: .04em; text-transform: uppercase; }
+    .cards { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+    .atelier-intro { max-width: 650px; margin: -10px 0 28px; color: #625d56; font-size: 15px; line-height: 1.8; }
     .contact {
       display: grid;
       grid-template-columns: 1fr 1fr;
@@ -171,8 +174,10 @@
       <a class="wordmark" href="#top" aria-label="Koubai home">koubai<span>.</span></a>
       <nav aria-label="Main navigation">
         <a href="#about">About</a>
-        <a href="#work">Things I make</a>
-        <a href="#contact">Say hello</a>
+        <a href="#code">Code</a>
+        <a href="#poetry">Poetry</a>
+        <a href="#diary">Diary</a>
+        <a href="#contact">Contact</a>
       </nav>
     </header>
 
@@ -225,37 +230,54 @@
         </div>
       </section>
 
-      <section id="work" class="work">
+      <section id="code" class="work">
         <div class="section-head">
           <div>
-            <div class="index">02 / Out in the world</div>
-            <h2>Things I make.</h2>
+            <div class="index">02 / The creative atelier</div>
+            <h2>A little world of code.</h2>
           </div>
-          <div class="section-note">A few places to wander</div>
+          <div class="section-note">Learn · experiment · make</div>
         </div>
+        <p class="atelier-intro">JavaScript is where I learn, experiment, and turn small ideas into useful things. These projects collect what I'm learning and making along the way.</p>
         <div class="cards">
-          <a class="card" href="https://github.com/redplum701" target="_blank" rel="noreferrer">
-            <div class="card-top"><span class="card-mark">⌘</span><span class="card-arrow" aria-hidden="true">↗</span></div>
-            <div><h3>Open source</h3><p>Small experiments and useful things, shared in the open.</p></div>
+          <a class="card" href="https://github.com/redplum701/study" target="_blank" rel="noreferrer">
+            <div class="card-top"><span class="card-mark">01</span><span class="card-arrow" aria-hidden="true">↗</span></div>
+            <div>
+              <h3>64 JavaScript Lessons</h3>
+              <p>Sixty-four hands-on lessons, with original examples to explore across 17 chapters.</p>
+              <div class="card-meta">Explore the lessons on GitHub</div>
+            </div>
           </a>
-          <a class="card" href="#notes">
-            <div class="card-top"><span class="card-mark">✳</span><span class="card-arrow" aria-hidden="true">↓</span></div>
-            <div><h3>Field notes</h3><p>Thoughts, discoveries, and things worth remembering.</p></div>
-          </a>
-          <a class="card" href="#contact">
-            <div class="card-top"><span class="card-mark">○</span><span class="card-arrow" aria-hidden="true">→</span></div>
-            <div><h3>In progress</h3><p>There is always something new taking shape.</p></div>
+          <a class="card" href="https://github.com/redplum701/modules" target="_blank" rel="noreferrer">
+            <div class="card-top"><span class="card-mark">02</span><span class="card-arrow" aria-hidden="true">↗</span></div>
+            <div>
+              <h3>JavaScript Modules</h3>
+              <p>Small, reusable tools made to solve everyday programming problems.</p>
+              <div class="card-meta">100 planned · 61 completed</div>
+            </div>
           </a>
         </div>
       </section>
 
-      <section id="notes" class="about">
+      <section id="poetry" class="about">
         <div>
-          <div class="index">03 / From the notebook</div>
-          <h2 style="margin-top: 14px">A work in progress.</h2>
+          <div class="index">03 / Poetry</div>
+          <h2 style="margin-top: 14px">Words finding their place.</h2>
         </div>
         <div class="about-copy">
-          <p>Good things take time. I'm currently gathering ideas and making room for what comes next. Check back soon — this little corner will grow as I do.</p>
+          <p>A space for poems, images, and small moments gathered into words.</p>
+          <p>This page is still taking shape. New work will find its place here in time.</p>
+        </div>
+      </section>
+
+      <section id="diary" class="about">
+        <div>
+          <div class="index">04 / Diary</div>
+          <h2 style="margin-top: 14px">Notes along the way.</h2>
+        </div>
+        <div class="about-copy">
+          <p>Discoveries, reflections, and everyday details worth remembering.</p>
+          <p>The diary is a work in progress, growing one note at a time.</p>
         </div>
       </section>
 
