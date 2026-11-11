@@ -51,6 +51,8 @@
     }
     nav a { color: #5e5952; transition: color .2s ease; }
     nav a:hover { color: var(--red); }
+    .hero-image { margin: 0; border-top: 0; overflow: hidden; }
+    .hero-image img { display: block; width: 100%; height: auto; aspect-ratio: 16 / 9; object-fit: cover; }
     .hero {
       min-height: 620px;
       display: grid;
@@ -182,41 +184,8 @@
     </header>
 
     <main id="top">
-      <section class="hero" aria-labelledby="hero-title" style="border-top: 0">
-        <div>
-          <div class="eyebrow">A little corner of the internet</div>
-          <h1 id="hero-title">Hello,<br>I'm <em>Koubai.</em></h1>
-          <p class="intro">Welcome to my little corner of the internet. I make things, follow my curiosity, and collect the small details that make a day feel special.</p>
-          <a class="hero-link" href="#about">A little about me <span aria-hidden="true">→</span></a>
-        </div>
-        <div class="flower-wrap">
-          <div>
-            <svg class="flower" viewBox="0 0 420 420" role="img" aria-labelledby="flower-title">
-              <title id="flower-title">An illustrated red plum blossom branch</title>
-              <path class="stem" d="M54 369 C137 320 190 265 233 202 C270 146 312 101 371 68"/>
-              <path class="twig" d="M183 274 C153 238 123 211 82 193 M238 196 C206 165 193 135 193 97 M279 137 C310 147 334 164 350 190 M329 99 C326 76 331 58 343 42"/>
-              <path d="M122 226 C108 205 96 200 83 203 C93 220 106 228 122 226Z" fill="#74805f"/>
-              <path d="M169 248 C148 230 133 230 120 238 C136 251 151 255 169 248Z" fill="#8b926c"/>
-              <path d="M225 212 C202 199 190 185 187 169 C207 173 220 188 225 212Z" fill="#78815f"/>
-              <path d="M267 158 C285 141 302 137 316 143 C301 159 285 165 267 158Z" fill="#8b926c"/>
-              <path d="M311 121 C331 121 345 131 350 145 C331 147 318 138 311 121Z" fill="#74805f"/>
-              <g transform="translate(82 193) scale(.72)">
-                <ellipse class="petal" cx="0" cy="-27" rx="14" ry="25"/><ellipse class="petal-light" cx="26" cy="-9" rx="14" ry="25" transform="rotate(72 26 -9)"/><ellipse class="petal" cx="16" cy="22" rx="14" ry="25" transform="rotate(144 16 22)"/><ellipse class="petal-light" cx="-16" cy="22" rx="14" ry="25" transform="rotate(216 -16 22)"/><ellipse class="petal" cx="-26" cy="-9" rx="14" ry="25" transform="rotate(288 -26 -9)"/><circle class="center" r="8"/>
-              </g>
-              <g transform="translate(193 97) scale(.86)">
-                <ellipse class="petal-light" cx="0" cy="-27" rx="14" ry="25"/><ellipse class="petal" cx="26" cy="-9" rx="14" ry="25" transform="rotate(72 26 -9)"/><ellipse class="petal-light" cx="16" cy="22" rx="14" ry="25" transform="rotate(144 16 22)"/><ellipse class="petal" cx="-16" cy="22" rx="14" ry="25" transform="rotate(216 -16 22)"/><ellipse class="petal-light" cx="-26" cy="-9" rx="14" ry="25" transform="rotate(288 -26 -9)"/><circle class="center" r="8"/>
-              </g>
-              <g transform="translate(350 190) scale(.7)">
-                <ellipse class="petal" cx="0" cy="-27" rx="14" ry="25"/><ellipse class="petal-light" cx="26" cy="-9" rx="14" ry="25" transform="rotate(72 26 -9)"/><ellipse class="petal" cx="16" cy="22" rx="14" ry="25" transform="rotate(144 16 22)"/><ellipse class="petal-light" cx="-16" cy="22" rx="14" ry="25" transform="rotate(216 -16 22)"/><ellipse class="petal" cx="-26" cy="-9" rx="14" ry="25" transform="rotate(288 -26 -9)"/><circle class="center" r="8"/>
-              </g>
-              <g transform="translate(343 42) scale(.55)">
-                <ellipse class="petal-light" cx="0" cy="-27" rx="14" ry="25"/><ellipse class="petal" cx="26" cy="-9" rx="14" ry="25" transform="rotate(72 26 -9)"/><ellipse class="petal-light" cx="16" cy="22" rx="14" ry="25" transform="rotate(144 16 22)"/><ellipse class="petal" cx="-16" cy="22" rx="14" ry="25" transform="rotate(216 -16 22)"/><ellipse class="petal-light" cx="-26" cy="-9" rx="14" ry="25" transform="rotate(288 -26 -9)"/><circle class="center" r="8"/>
-              </g>
-              <circle class="bud" cx="53" cy="369" r="5"/><circle class="bud" cx="371" cy="68" r="5"/><circle class="bud" cx="238" cy="196" r="4"/>
-            </svg>
-            <div class="flower-caption">紅梅 — koubai / red plum blossom</div>
-          </div>
-        </div>
+      <section class="hero-image" aria-label="Koubai — A Quiet Presence, A Distinctive Identity">
+        <img src="assets/kouba.jpeg" alt="Koubai in Dallas — Bridging Cultures, Blooming Together. Red plum blossoms frame a person looking toward the Dallas skyline at sunset.">
       </section>
 
       <section id="about" class="about">
