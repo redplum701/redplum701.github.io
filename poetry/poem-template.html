@@ -1,0 +1,45 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#f7f3eb">
+  <meta name="description" content="[A short description of the poem].">
+  <title>[Poem Title] — Poetry Atelier · Koubai</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Mono:wght@400;500&family=DM+Sans:wght@400;500;600&family=Playfair+Display:ital,wght@0,500;0,600;1,500&display=swap" rel="stylesheet">
+  <style>
+    :root{--paper:#f7f3eb;--ink:#25221f;--muted:#77716a;--red:#a83242;--line:#ded8ce;--serif:"Playfair Display",Georgia,serif;--sans:"DM Sans",sans-serif;--mono:"DM Mono",monospace}
+    *{box-sizing:border-box}body{margin:0;background:var(--paper);color:var(--ink);font-family:var(--sans);-webkit-font-smoothing:antialiased}
+    a{color:inherit;text-decoration:none}a:focus-visible{outline:2px solid var(--red);outline-offset:5px}.shell{width:min(760px,calc(100% - 48px));margin:0 auto}
+    header{height:84px;display:flex;align-items:center;justify-content:space-between;border-bottom:1px solid var(--line)}
+    .wordmark{font:600 19px var(--serif);letter-spacing:-.04em}.wordmark span{color:var(--red)}nav a,.eyebrow,.date,footer{font:11px var(--mono);letter-spacing:.08em;text-transform:uppercase}
+    nav{display:flex;gap:24px}nav a,.date,footer{color:var(--muted)}main{padding:76px 0 100px}.eyebrow{color:var(--red)}
+    h1{margin:20px 0 12px;font:500 clamp(44px,8vw,72px)/1.08 var(--serif);letter-spacing:-.055em}
+    .date{font-size:10px}.poem{margin:58px auto 64px;max-width:520px;font:italic 20px/2 var(--serif);white-space:pre-line}
+    .back{color:var(--red);font:11px var(--mono);letter-spacing:.06em;text-transform:uppercase}
+    footer{min-height:76px;border-top:1px solid var(--line);display:flex;align-items:center;justify-content:space-between;font-size:10px}
+    @media(max-width:520px){header{height:72px}nav{gap:14px}nav a{font-size:9px}main{padding:58px 0 76px}.poem{font-size:18px;margin:44px auto 52px}footer{gap:12px;flex-wrap:wrap;padding:18px 0}}
+  </style>
+</head>
+<body>
+  <div class="shell">
+    <header>
+      <a class="wordmark" href="/" aria-label="Koubai home">koubai<span>.</span></a>
+      <nav aria-label="Main navigation"><a href="/poetry/">Poetry</a><a href="/diary/">Diary</a><a href="/#atelier">Atelier</a></nav>
+    </header>
+    <main>
+      <div class="eyebrow">Poetry Atelier</div>
+      <h1>[Poem Title]</h1>
+      <div class="date">[Month DD, YYYY]</div>
+      <article class="poem">
+[Paste the complete poem here. Keep intentional line breaks.]
+      </article>
+      <a class="back" href="/poetry/">← Back to Poetry</a>
+    </main>
+    <footer><a class="wordmark" href="/">koubai<span>.</span></a><span>© <span id="year"></span> Koubai</span><a href="/#top">Home ↑</a></footer>
+  </div>
+  <script>document.getElementById("year").textContent=new Date().getFullYear();</script>
+</body>
+</html>
