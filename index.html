@@ -4,8 +4,8 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <meta name="theme-color" content="#f7f3eb">
-  <meta name="description" content="A small corner of the internet by Koubai — notes, projects, and things made with care.">
-  <title>Koubai — A little corner of the internet</title>
+  <meta name="description" content="Koubai’s little atelier — a creative home for code, poetry, and notes made with care.">
+  <title>Koubai — A Little Atelier of Code and Poetry</title>
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=DM+Mono:wght@400;500&family=DM+Sans:wght@400;500;600;700&family=Playfair+Display:ital,wght@0,500;0,600;1,500;1,600&display=swap" rel="stylesheet">
@@ -121,6 +121,10 @@
     .card-meta { margin-top: 15px; color: var(--red); font: 10px var(--mono); letter-spacing: .04em; text-transform: uppercase; }
     .cards { grid-template-columns: repeat(2, minmax(0, 1fr)); }
     .atelier-intro { max-width: 650px; margin: -10px 0 28px; color: #625d56; font-size: 15px; line-height: 1.8; }
+    .atelier-cards { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 16px; }
+    .atelier-card { min-height: 205px; background: rgba(255,255,255,.24); }
+    .atelier-card h3 { font-size: 26px; }
+    .atelier-card .card-meta { margin-top: 18px; }
     .contact {
       display: grid;
       grid-template-columns: 1fr 1fr;
@@ -159,7 +163,7 @@
       h2 { font-size: 36px; }
       .work { padding: 54px 0 62px; }
       .section-head { align-items: start; gap: 12px; flex-direction: column; }
-      .cards { grid-template-columns: 1fr; }
+      .cards, .atelier-cards { grid-template-columns: 1fr; }
       .card { min-height: 175px; }
       .contact { grid-template-columns: 1fr; padding: 32px 26px; margin: 18px 0 52px; }
       .contact-right { justify-self: start; text-align: left; }
@@ -176,6 +180,7 @@
       <a class="wordmark" href="#top" aria-label="Koubai home">koubai<span>.</span></a>
       <nav aria-label="Main navigation">
         <a href="#about">About</a>
+        <a href="#atelier">Atelier</a>
         <a href="#code">Code</a>
         <a href="#poetry">Poetry</a>
         <a href="#diary">Diary</a>
@@ -199,10 +204,47 @@
         </div>
       </section>
 
+      <section id="atelier" class="work">
+        <div class="section-head">
+          <div>
+            <div class="index">02 / Koubai's creative home</div>
+            <h2>A little atelier of code and poetry.</h2>
+          </div>
+          <div class="section-note">Three spaces · One little world</div>
+        </div>
+        <p class="atelier-intro">This is where I give ideas room to grow. Three little spaces, each with its own way of collecting and expressing what matters.</p>
+        <div class="atelier-cards">
+          <a class="card atelier-card" href="#code">
+            <div class="card-top"><span class="card-mark">01</span><span class="card-arrow" aria-hidden="true">↓</span></div>
+            <div>
+              <h3>Code Atelier</h3>
+              <p>JavaScript lessons, reusable modules, experiments, and things made to be useful.</p>
+              <div class="card-meta">Learn · experiment · create</div>
+            </div>
+          </a>
+          <a class="card atelier-card" href="#poetry">
+            <div class="card-top"><span class="card-mark">02</span><span class="card-arrow" aria-hidden="true">↓</span></div>
+            <div>
+              <h3>Poetry Atelier</h3>
+              <p>Poems, words, and quiet feelings finding their way onto the page.</p>
+              <div class="card-meta">Words · images · feelings</div>
+            </div>
+          </a>
+          <a class="card atelier-card" href="#diary">
+            <div class="card-top"><span class="card-mark">03</span><span class="card-arrow" aria-hidden="true">↓</span></div>
+            <div>
+              <h3>Diary Atelier</h3>
+              <p>Small discoveries, daily notes, and moments worth keeping.</p>
+              <div class="card-meta">Notes · days · discoveries</div>
+            </div>
+          </a>
+        </div>
+      </section>
+
       <section id="code" class="work">
         <div class="section-head">
           <div>
-            <div class="index">02 / The creative atelier</div>
+            <div class="index">03 / Code Atelier</div>
             <h2>A little world of code.</h2>
           </div>
           <div class="section-note">Learn · experiment · make</div>
@@ -217,8 +259,16 @@
               <div class="card-meta">Explore the lessons on GitHub</div>
             </div>
           </a>
-          <a class="card" href="https://github.com/redplum701/modules" target="_blank" rel="noreferrer">
+          <a class="card" href="https://redplum701.wordpress.com/" target="_blank" rel="noreferrer">
             <div class="card-top"><span class="card-mark">02</span><span class="card-arrow" aria-hidden="true">↗</span></div>
+            <div>
+              <h3>JavaScript Study Blog</h3>
+              <p>Study articles and notes that accompany the JavaScript lesson series.</p>
+              <div class="card-meta">Read the study blog on WordPress</div>
+            </div>
+          </a>
+          <a class="card" href="https://github.com/redplum701/modules" target="_blank" rel="noreferrer">
+            <div class="card-top"><span class="card-mark">03</span><span class="card-arrow" aria-hidden="true">↗</span></div>
             <div>
               <h3>JavaScript Modules</h3>
               <p>Small, reusable tools made to solve everyday programming problems.</p>
@@ -230,7 +280,7 @@
 
       <section id="poetry" class="about">
         <div>
-          <div class="index">03 / Poetry</div>
+          <div class="index">04 / Poetry Atelier</div>
           <h2 style="margin-top: 14px">Words finding their place.</h2>
         </div>
         <div class="about-copy">
@@ -241,7 +291,7 @@
 
       <section id="diary" class="about">
         <div>
-          <div class="index">04 / Diary</div>
+          <div class="index">05 / Diary Atelier</div>
           <h2 style="margin-top: 14px">Notes along the way.</h2>
         </div>
         <div class="about-copy">
@@ -252,7 +302,7 @@
 
       <section class="contact" id="contact">
         <div>
-          <div class="index">04 / Get in touch</div>
+          <div class="index">06 / Get in touch</div>
           <h2>Have a good idea?</h2>
         </div>
         <div class="contact-right">
