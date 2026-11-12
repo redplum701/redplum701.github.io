@@ -1,0 +1,11 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" role="img" aria-label="Red plum blossom">
+  <rect width="512" height="512" rx="112" fill="#f7f3eb"/>
+  <g fill="#a83242">
+    <ellipse cx="256" cy="151" rx="52" ry="69"/>
+    <ellipse cx="356" cy="214" rx="52" ry="69"/>
+    <ellipse cx="318" cy="332" rx="52" ry="69"/>
+    <ellipse cx="194" cy="332" rx="52" ry="69"/>
+    <ellipse cx="156" cy="214" rx="52" ry="69"/>
+  </g>
+  <circle cx="256" cy="245" r="30" fill="#e9bd7a"/>
+</svg>
