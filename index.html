@@ -92,6 +92,9 @@
     .flower .bud { fill: #8e2937; }
     .flower-caption { margin-top: 8px; color: var(--muted); font: 10px var(--mono); letter-spacing: .09em; text-transform: uppercase; }
     section { border-top: 1px solid var(--line); }
+    .note-from-koubai { padding: 52px 0 58px; text-align: center; }
+    .note-from-koubai blockquote { max-width: 720px; margin: 20px auto 14px; color: var(--ink); font: italic 500 clamp(27px, 4.5vw, 43px)/1.35 var(--serif); letter-spacing: -.025em; }
+    .note-caption { color: var(--muted); font: 10px var(--mono); letter-spacing: .09em; text-transform: uppercase; }
     .about { display: grid; grid-template-columns: 1fr 2fr; gap: 60px; padding: 72px 0 82px; }
     .index { color: var(--red); }
     h2 { margin: 0; font: 500 42px/1.1 var(--serif); letter-spacing: -.04em; }
@@ -191,6 +194,12 @@
     <main id="top">
       <section class="hero-image" aria-label="Koubai — A Quiet Presence, A Distinctive Identity">
         <img src="assets/kouba.png?v=585284a1" alt="Koubai in Dallas — Bridging Cultures, Blooming Together. Red plum blossoms frame a person looking toward the Dallas skyline at sunset.">
+      </section>
+
+      <section class="note-from-koubai" aria-labelledby="note-title">
+        <div class="eyebrow" id="note-title">A note from Koubai</div>
+        <blockquote id="daily-note">Some things grow quietly, long before they bloom.</blockquote>
+        <div class="note-caption">A small thought for today</div>
       </section>
 
       <section id="about" class="about">
@@ -320,6 +329,19 @@
   </div>
   <script>
     document.getElementById("year").textContent = new Date().getFullYear();
+
+    const notes = [
+      "Some things grow quietly, long before they bloom.",
+      "A small idea can become a lovely beginning.",
+      "Words and code are two ways of making something visible.",
+      "You do not have to hurry to make something meaningful.",
+      "There is room for both careful plans and curious detours.",
+      "Even a quiet day can leave a bright little thought behind.",
+      "Make something with care, and let it find its own place."
+    ];
+    const dayNumber = Math.floor(Date.now() / 86400000);
+    document.getElementById("daily-note").textContent =
+      notes[((dayNumber % notes.length) + notes.length) % notes.length];
   </script>
 </body>
 </html>
