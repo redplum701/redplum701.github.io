@@ -145,6 +145,20 @@
     .contact-right p { margin: 0 0 14px; color: #625d56; font-size: 14px; }
     .contact-link { color: var(--red); font: 12px var(--mono); letter-spacing: .04em; }
     .contact-link span { padding-left: 8px; }
+    .discord-invite {
+      margin: -70px 0 70px;
+      padding: 34px 0 38px;
+      border-top: 1px solid var(--line);
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      align-items: center;
+      gap: 28px;
+    }
+    .discord-invite h2 { margin-top: 12px; font-size: 32px; }
+    .discord-copy { justify-self: end; max-width: 440px; color: #625d56; font-size: 14px; line-height: 1.8; }
+    .discord-copy p { margin: 0 0 12px; }
+    .discord-link { color: var(--red); font: 12px var(--mono); letter-spacing: .04em; }
+    .discord-link span { padding-left: 8px; }
     footer {
       min-height: 76px;
       border-top: 1px solid var(--line);
@@ -173,6 +187,8 @@
       .card { min-height: 175px; }
       .contact { grid-template-columns: 1fr; padding: 32px 26px; margin: 18px 0 52px; }
       .contact-right { justify-self: start; text-align: left; }
+      .discord-invite { grid-template-columns: 1fr; gap: 12px; margin: -52px 0 52px; padding: 28px 0; }
+      .discord-copy { justify-self: start; }
       footer { min-height: 68px; }
     }
     @media (prefers-reduced-motion: reduce) {
@@ -321,6 +337,17 @@
         <div class="contact-right">
           <p>I'd love to hear what you're working on.</p>
           <a class="contact-link" href="https://github.com/redplum701">Find me on GitHub <span aria-hidden="true">↗</span></a>
+        </div>
+      </section>
+
+      <section class="discord-invite" aria-labelledby="discord-title">
+        <div>
+          <div class="index">07 / Learn together</div>
+          <h2 id="discord-title">Koubai Atelier on Discord</h2>
+        </div>
+        <div class="discord-copy">
+          <p>A place to learn, build, and share ideas. Follow JavaScript lessons, explore reusable modules, and share the progress of Koubai's creative projects.</p>
+          <a class="discord-link" href="https://discord.gg/UVppxgpZMf">Join the Discord <span aria-hidden="true">↗</span></a>
         </div>
       </section>
     </main>
